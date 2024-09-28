@@ -15,10 +15,11 @@ body{
 
 /* Visualize container */
 .visualizeContainer {
-	width: 100%;
-	min-width: 300px;
+	width: calc(100% - 30px); /* Reduce width by the margin value */
+	margin: 0 15px;
+	/* min-width: 300px; */
 	height: 100%;
-	min-height: 300px;
+	/* min-height: 300px; */
 	display: flex;
 	flex-direction: row;
 	align-items: flex-end;
@@ -195,7 +196,8 @@ header {
 		flex-direction: row;
 		align-items: flex-start;
 		justify-content: space-evenly;
-		min-width: 100%;
+		width: calc(100% - 16px);
+		margin: 0 8px;
 	}
 
 	.arrayBar {

@@ -2,7 +2,7 @@ import colors from '../SortingVisualizer/ColorCodes';
 
 let count = 0;
 
-export const mergeSortAnimation = (tempArr, animationSpeed) => {
+export const mergeSort = (tempArr, animationSpeed) => {
 	const arr = tempArr.map(item => item.val);
 	count = 0;
 	const sortedArray = mergesort(arr, 0, arr.length - 1, animationSpeed);

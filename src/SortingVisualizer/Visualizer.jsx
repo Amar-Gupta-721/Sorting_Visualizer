@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import colors from './ColorCodes';
-import { mergeSortAnimation } from '../Algorithms/MergeSort';
+import { mergeSort } from '../Algorithms/MergeSort';
 import { insertionSort } from '../Algorithms/InsertionSort';
 import { selectionSort } from '../Algorithms/SelectionSort';
 import { bubbleSort } from '../Algorithms/Bubblesort';
@@ -19,7 +19,7 @@ const Visualizer = () => {
 	const [mainArray, setMainArray] = useState([]);
 	const [arrayLength, setArrayLength] = useState(70);
 	const [animationSpeed, setAnimationSpeed] = useState(10);
-	const [algo, setAlgo] = useState('mergesort');
+	const [algo, setAlgo] = useState('bubblesort');
 	const [able, setAble] = useState(true);		// ability to interact with buttons
 
 	//Render the Array Before DOM loades
@@ -87,9 +87,9 @@ const Visualizer = () => {
 	};
 
 	// MERGE SORT
-	const mergeSort = () => {
+	const mergeSortAnimate = () => {
 		setAble(false);
-		const { sortedArray, count } = mergeSortAnimation(
+		const { sortedArray, count } = mergeSort(
 			mainArray,
 			animationSpeed
 		);
@@ -130,7 +130,7 @@ const Visualizer = () => {
 				break;
 
 			case 'mergesort':
-				mergeSort();
+				mergeSortAnimate();
 				break;
 
 			case 'selectionsort':
